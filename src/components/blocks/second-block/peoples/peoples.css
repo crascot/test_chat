@@ -1,0 +1,11 @@
+.peoples {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 30px;
+    transition: 0.4s;
+}
+.peoples:hover {
+    background-color: #0093E9;
+    opacity: 0.5;
+}
