@@ -6,7 +6,7 @@ import Peoples from './peoples/peoples';
 
 const SecondBlock = () => {
     return (
-        <Grid className='secondBlock' item xs={3}>
+        <Grid className='secondBlock' item xs={2}>
             <Grid
                 style={{ padding: 15 }}s
                 justifyContent="flex-start"

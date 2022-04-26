@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import FirstBlock from './blocks/first-block/firstBlock';
 import './main.css';
 import SecondBlock from './blocks/second-block/secondBlock';
+import ThirdBlock from './blocks/third-block/thirdBlock';
 
 const Main = () => {
 
@@ -16,8 +17,8 @@ const Main = () => {
             >
                 <FirstBlock />
                 <SecondBlock />
-                <Grid item xs={5} style={{ backgroundColor: 'green' }}></Grid>
-                <Grid item xs={3} style={{ backgroundColor: 'yellow' }}></Grid>
+                <ThirdBlock />
+                <Grid item xs={3} style={{ backgroundColor: 'white' }}></Grid>
             </Grid>
         </div>
     )
