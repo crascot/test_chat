@@ -8,8 +8,7 @@ import ThirdBlock from './blocks/third-block/thirdBlock';
 const Main = () => {
 
     return (
-        <div className='main'>
-            <Grid className='main-grid'
+            <Grid className='main'
                 direction="row"
                 justifyContent="center"
                 alignItems="stretch"
@@ -20,7 +19,6 @@ const Main = () => {
                 <ThirdBlock />
                 <Grid item xs={3} style={{ backgroundColor: 'white' }}></Grid>
             </Grid>
-        </div>
     )
 };
 
