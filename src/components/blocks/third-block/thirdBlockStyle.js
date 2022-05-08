@@ -14,7 +14,6 @@ export const thirdBlockStyle = {
         transform: 'rotate(45deg)',
     },
     chat: {
-        backgroundColor: 'red',
         marginBottom: 17.9,
         padding: 30,
     },
