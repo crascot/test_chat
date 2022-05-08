@@ -4,6 +4,7 @@ import FirstBlock from './blocks/first-block/firstBlock';
 import './main.css';
 import SecondBlock from './blocks/second-block/secondBlock';
 import ThirdBlock from './blocks/third-block/thirdBlock';
+import FourthBlock from './blocks/fourth-block/fourthBlock';
 
 const Main = () => {
 
@@ -17,7 +18,7 @@ const Main = () => {
                 <FirstBlock />
                 <SecondBlock />
                 <ThirdBlock />
-                <Grid item xs={3} style={{ backgroundColor: 'white' }}></Grid>
+                <FourthBlock />
             </Grid>
     )
 };

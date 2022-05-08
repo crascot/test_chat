@@ -42,7 +42,7 @@ const ThirdBlock = () => {
                 </IconButton>
             </Grid>
             <Grid item xs style={thirdBlockStyle.chat}>
-                chat
+                
             </Grid>
             <Grid item xs={1} style={thirdBlockStyle.send}>
                 <InputBase
