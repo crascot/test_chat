@@ -18,7 +18,7 @@ const iconSize = {
 
 const FirstBlock = () => {
     return (
-        <Grid className='firstBlock' item xs>
+        <Grid className='firstBlock' item xs={1}>
             <div className='container'>
                 <Grid
                     container

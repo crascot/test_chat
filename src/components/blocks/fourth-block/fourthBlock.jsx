@@ -5,10 +5,14 @@ import './fourthBlock.css';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useSelector } from "react-redux";
 
 
 const FourthBlock = () => {
-    return (
+    const id = useSelector(state => state.peoples.id)
+    const currentContact = useSelector(state => state.peoples.currentContact)
+
+    if (id !== 0) return (
         <Grid item xs={3}
             style={fourthBlockStyle.main}
             container
@@ -17,10 +21,10 @@ const FourthBlock = () => {
             alignItems="stretch"
         >
             <Grid item xs={6} justifyContent='center' alignItems='center' container>
-                <div style={{width: '100%'}}>
+                <div style={{ width: '100%' }}>
                     <Avatar style={fourthBlockStyle.avatar} />
                     <Typography style={fourthBlockStyle.name} variant="h4" gutterBottom component="div">
-                        Name
+                        {currentContact ? currentContact.name : false}
                     </Typography>
                 </div>
             </Grid>

@@ -4,6 +4,11 @@ export const thirdBlockStyle = {
         borderLeft: '1px solid #808080',
         borderRight: '1px solid #808080',
     },
+    zeroId: {
+        width: 'max-content',
+        margin: '0 auto',
+        padding: 15,
+    },
     top: {
         padding: '17.9px 30px',
         borderBottom: '1px solid #808080',
@@ -36,6 +41,8 @@ export const thirdBlockStyle = {
         width: 36,
         height: 36,
         transform: 'rotate(-45deg)',
+        marginLeft: 6,
+        marginBottom: 5,
         color: 'white'
     }
 }
