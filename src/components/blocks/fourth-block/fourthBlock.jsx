@@ -24,7 +24,7 @@ const FourthBlock = () => {
                 <div style={{ width: '100%' }}>
                     <Avatar style={fourthBlockStyle.avatar} />
                     <Typography style={fourthBlockStyle.name} variant="h4" gutterBottom component="div">
-                        {currentContact ? currentContact.name : false}
+                        {currentContact.name}
                     </Typography>
                 </div>
             </Grid>
