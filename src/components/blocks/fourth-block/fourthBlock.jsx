@@ -21,8 +21,8 @@ const FourthBlock = () => {
             alignItems="stretch"
         >
             <Grid item xs={6} justifyContent='center' alignItems='center' container>
-                <div style={{ width: '100%' }}>
-                    <Avatar style={fourthBlockStyle.avatar} />
+                <div style={fourthBlockStyle.contactData}>
+                    <Avatar style={fourthBlockStyle.avatar} src={currentContact.avatar} />
                     <Typography style={fourthBlockStyle.name} variant="h4" gutterBottom component="div">
                         {currentContact.name}
                     </Typography>
@@ -35,9 +35,9 @@ const FourthBlock = () => {
                 alignItems='center'
                 container
             >
-                <IconButton style={{ color: '#0093E9' }}><LocalPhoneIcon /></IconButton>
-                <IconButton style={{ color: '#0093E9' }}><VideocamIcon /></IconButton>
-                <IconButton style={{ color: '#ff0000' }}><FavoriteIcon /></IconButton>
+                <IconButton style={fourthBlockStyle.iconPhone}><LocalPhoneIcon /></IconButton>
+                <IconButton style={fourthBlockStyle.iconVideo}><VideocamIcon /></IconButton>
+                <IconButton style={fourthBlockStyle.iconHeart}><FavoriteIcon /></IconButton>
             </Grid>
         </Grid>
     )

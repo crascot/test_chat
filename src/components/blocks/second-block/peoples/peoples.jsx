@@ -7,19 +7,13 @@ import { getId } from '../../../../features/peoples/peoplesSlice';
 import { peoplesStyle } from './peoplesStyle';
 
 
-const avatar = {
-    marginRight: 15,
-    width: 50,
-    height: 50
-}
-
 const Peoples = ({ props }) => {
     const dispatch = useDispatch()
     const onCurrentId = () => dispatch(getId(props.id))
 
     return (
         <div className='peoples' onClick={onCurrentId}>
-            <Avatar style={avatar} />
+            <Avatar style={peoplesStyle.avatar} src={props.avatar} />
             <div style={peoplesStyle.container}>
                 <div style={peoplesStyle.block}>
                     <Typography variant="h6" mb={0} gutterBottom component="div">
