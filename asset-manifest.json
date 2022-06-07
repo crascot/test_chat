@@ -1,13 +1,13 @@
 {
-  "main.css": "/test_chat/static/css/main.00609992.chunk.css",
-  "main.js": "/test_chat/static/js/main.ead47663.chunk.js",
-  "main.js.map": "/test_chat/static/js/main.ead47663.chunk.js.map",
-  "static/js/1.39671a69.chunk.js": "/test_chat/static/js/1.39671a69.chunk.js",
-  "static/js/1.39671a69.chunk.js.map": "/test_chat/static/js/1.39671a69.chunk.js.map",
+  "main.css": "/test_chat/static/css/main.0429ace7.chunk.css",
+  "main.js": "/test_chat/static/js/main.ffce00f9.chunk.js",
+  "main.js.map": "/test_chat/static/js/main.ffce00f9.chunk.js.map",
+  "static/js/1.f5655bdb.chunk.js": "/test_chat/static/js/1.f5655bdb.chunk.js",
+  "static/js/1.f5655bdb.chunk.js.map": "/test_chat/static/js/1.f5655bdb.chunk.js.map",
   "runtime~main.js": "/test_chat/static/js/runtime~main.907fbd2b.js",
   "runtime~main.js.map": "/test_chat/static/js/runtime~main.907fbd2b.js.map",
-  "static/css/main.00609992.chunk.css.map": "/test_chat/static/css/main.00609992.chunk.css.map",
+  "static/css/main.0429ace7.chunk.css.map": "/test_chat/static/css/main.0429ace7.chunk.css.map",
   "index.html": "/test_chat/index.html",
-  "precache-manifest.18ebb6364149ed19f24b31187d851e09.js": "/test_chat/precache-manifest.18ebb6364149ed19f24b31187d851e09.js",
+  "precache-manifest.671fc17d43480e4d9055aa25c14cc2a1.js": "/test_chat/precache-manifest.671fc17d43480e4d9055aa25c14cc2a1.js",
   "service-worker.js": "/test_chat/service-worker.js"
 }
