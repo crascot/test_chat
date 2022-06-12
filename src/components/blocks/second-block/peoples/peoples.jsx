@@ -16,16 +16,16 @@ const Peoples = ({ props }) => {
             <Avatar style={peoplesStyle.avatar} src={props.avatar} />
             <div style={peoplesStyle.container}>
                 <div style={peoplesStyle.block}>
-                    <Typography variant="h6" mb={0} gutterBottom component="div">
+                    <Typography variant="h6" mb={0} component="div">
                         {props.name}
                     </Typography>
                     <CheckIcon style={peoplesStyle.checkIcon} />
                 </div>
                 <div style={peoplesStyle.block}>
-                    <Typography variant="caption" display="block" gutterBottom>
+                    <Typography variant="caption" display="block">
                         {props.username}
                     </Typography>
-                    <Typography variant="caption" display="block" gutterBottom>
+                    <Typography variant="caption" display="block">
                         9:30
                     </Typography>
                 </div>

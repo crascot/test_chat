@@ -14,7 +14,8 @@ import Icon from "./icons/icons";
 
 const FourthBlock = () => {
     const id = useSelector(state => state.peoples.id)
-    const currentContact = useSelector(state => state.peoples.currentContact)
+    const contacts = useSelector(state => state.peoples.contacts)
+    const currentContact = contacts.find(user => user.id === id)
 
     const icons = [
         {
@@ -34,7 +35,7 @@ const FourthBlock = () => {
         }
     ]
 
-    if (id !== 0) return (
+    if (id) return (
         <Grid item xs={3}
             container
             className='fourth-block'
@@ -57,7 +58,7 @@ const FourthBlock = () => {
                 alignItems='flex-start'
                 container
             >
-                {icons.map((i) => <Icon i={i} />)}
+                {icons.map((i, index) => <Icon i={i} key={index} />)}
             </Grid>
         </Grid>
     )

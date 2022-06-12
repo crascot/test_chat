@@ -14,11 +14,14 @@ const Send = () => {
         let mess = {
             id: id,
             align: 'right',
-            message: message
+            message: message.trim()
         }
 
         dispatch(getChat(mess))
         dispatch(writeMessage(''))
+    }
+    const sendEnter = (e) => {
+        if (e.key === "Enter") sendMessage();
     }
 
     return (
@@ -34,6 +37,7 @@ const Send = () => {
                 <InputBase
                     value={message}
                     onChange={onWriteMessage}
+                    onKeyDown={sendEnter}
                     fullWidth
                     placeholder="Write Message..."
                     className='send-input'

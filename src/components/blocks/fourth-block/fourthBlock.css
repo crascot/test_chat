@@ -1,5 +1,6 @@
 .fourth-block { 
     background-color: white;
+    border-left: 1px solid #808080;
     padding: 0 5px !important;
 }
 
@@ -17,6 +18,5 @@
 
 .fourth-block .connection { padding: 0 25px; }
 .fourth-block .connection svg {
-    width: 3vw;
-    height: 3vw;
+    font-size: 62px;
 }
