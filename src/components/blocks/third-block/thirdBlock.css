@@ -1,0 +1,49 @@
+.thirty-block {
+    background-color: white;
+    border-left: 1px solid #808080;
+    border-right: 1px solid #808080;
+    min-width: 300px !important;
+}
+
+.zero-id { padding: 15px; }
+.zero-id * { text-align: center; }
+.contact-id {
+    flex-wrap: nowrap !important;
+    overflow: auto;
+}
+
+.chat {
+    margin-bottom: 17.9px !important;
+    padding: 0 30px !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: inherit !important;
+}
+
+.send { 
+    flex-wrap: nowrap !important;
+    padding: 0 30px 5px;
+}
+.send-input {
+    padding: 9px 12px 11px;
+    padding-left: 20px;
+    border: 1px solid #0093E9;
+    border-right: 0;
+    border-radius: 50px 0 0 50px;
+    background-color: white;
+}
+.send-button {
+    margin-left: -40px !important;
+    background-color: #0093E9 !important;
+    width: 62px !important;
+    height: 62px !important;
+    border-radius: 30px;
+}
+.send-icon {
+    width: 36px !important;
+    height: 36px !important;
+    transform: rotate(-45deg);
+    margin-left: 6px;
+    margin-bottom: 5px;
+    color: white;
+}

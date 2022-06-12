@@ -1,7 +1,22 @@
-.connection {
-    padding: 0 30px;
+.fourth-block { 
+    background-color: white;
+    padding: 0 5px !important;
 }
-.connection svg {
+
+.fourth-block .contact { width: 100%; }
+.fourth-block .contact .avatar {
+    width: 15vw;
+    height: 15vw;
+    margin: 0 auto;
+}
+.fourth-block .contact .name {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 2.5vw;
+}
+
+.fourth-block .connection { padding: 0 25px; }
+.fourth-block .connection svg {
     width: 3vw;
     height: 3vw;
 }

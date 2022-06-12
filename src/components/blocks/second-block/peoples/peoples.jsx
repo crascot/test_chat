@@ -1,29 +1,29 @@
 import React from 'react';
 import { Avatar, Typography } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
-import './peoples.css'
+import './peoples.css';
+import { useDispatch } from 'react-redux';
+import { getId } from '../../../../features/peoples/peoplesSlice';
+import { peoplesStyle } from './peoplesStyle';
 
 
-const avatar = {
-    marginRight: 25,
-    width: 50,
-    height: 50
-}
+const Peoples = ({ props }) => {
+    const dispatch = useDispatch()
+    const onCurrentId = () => dispatch(getId(props.id))
 
-const Peoples = () => {
     return (
-        <div className='peoples'>
-            <Avatar style={avatar} />
-            <div style={{width: '100%'}}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className='peoples' onClick={onCurrentId}>
+            <Avatar style={peoplesStyle.avatar} src={props.avatar} />
+            <div style={peoplesStyle.container}>
+                <div style={peoplesStyle.block}>
                     <Typography variant="h6" mb={0} gutterBottom component="div">
-                        Имя
+                        {props.name}
                     </Typography>
-                    <CheckIcon style={{marginBottom: 7}} />
+                    <CheckIcon style={peoplesStyle.checkIcon} />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={peoplesStyle.block}>
                     <Typography variant="caption" display="block" gutterBottom>
-                        Никнейм
+                        {props.username}
                     </Typography>
                     <Typography variant="caption" display="block" gutterBottom>
                         9:30

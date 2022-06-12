@@ -1,26 +1,52 @@
 import React from "react";
-import { Grid, Avatar, Typography, IconButton } from "@mui/material";
+import { Grid, Avatar, Typography } from "@mui/material";
 import { fourthBlockStyle } from "./fourthBlockStyle";
 import './fourthBlock.css';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import VideocamIcon from '@mui/icons-material/Videocam';
+import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import { useSelector } from "react-redux";
+import Icon from "./icons/icons";
 
 
 const FourthBlock = () => {
-    return (
+    const id = useSelector(state => state.peoples.id)
+    const currentContact = useSelector(state => state.peoples.currentContact)
+
+    const icons = [
+        {
+            id: 1,
+            icon: <LocalPhoneIcon style={fourthBlockStyle.iconPhone} />,
+            iconHover: <LocalPhoneOutlinedIcon style={fourthBlockStyle.iconPhone} />
+        },
+        {
+            id: 2,
+            icon: <VideocamIcon style={fourthBlockStyle.iconVideo} />,
+            iconHover: <VideocamOutlinedIcon style={fourthBlockStyle.iconVideo} />
+        },
+        {
+            id: 3,
+            icon: <FavoriteIcon style={fourthBlockStyle.iconHeart} />,
+            iconHover: <FavoriteBorderOutlinedIcon style={fourthBlockStyle.iconHeart} />
+        }
+    ]
+
+    if (id !== 0) return (
         <Grid item xs={3}
-            style={fourthBlockStyle.main}
             container
+            className='fourth-block'
             direction="column"
             justifyContent="center"
             alignItems="stretch"
         >
-            <Grid item xs={6} justifyContent='center' alignItems='center' container>
-                <div style={{width: '100%'}}>
-                    <Avatar style={fourthBlockStyle.avatar} />
-                    <Typography style={fourthBlockStyle.name} variant="h4" gutterBottom component="div">
-                        Name
+            <Grid item xs={6} justifyContent='center' alignItems='flex-end' container>
+                <div className='contact'>
+                    <Avatar className='avatar' src={currentContact.avatar} />
+                    <Typography className='name' variant="h4" gutterBottom component="div">
+                        {currentContact.name}
                     </Typography>
                 </div>
             </Grid>
@@ -28,12 +54,10 @@ const FourthBlock = () => {
                 className='connection'
                 direction="row"
                 justifyContent='space-between'
-                alignItems='center'
+                alignItems='flex-start'
                 container
             >
-                <IconButton style={{ color: '#0093E9' }}><LocalPhoneIcon /></IconButton>
-                <IconButton style={{ color: '#0093E9' }}><VideocamIcon /></IconButton>
-                <IconButton style={{ color: '#ff0000' }}><FavoriteIcon /></IconButton>
+                {icons.map((i) => <Icon i={i} />)}
             </Grid>
         </Grid>
     )

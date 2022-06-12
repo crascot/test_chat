@@ -4,21 +4,13 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { Grid, Avatar, IconButton } from '@mui/material';
+import { firstBlockStyle } from './firstBlockStyle';
 import './firstBlock.css';
 
 
-const avatarSize = {
-    width: 66,
-    height: 66,
-}
-const iconSize = {
-    width: 36,
-    height: 36,
-}
-
 const FirstBlock = () => {
     return (
-        <Grid className='firstBlock' item xs>
+        <Grid className='firstBlock' item xs={1}>
             <div className='container'>
                 <Grid
                     container
@@ -26,21 +18,21 @@ const FirstBlock = () => {
                     justifyContent="flex-start"
                     alignItems="center">
                     <Grid item className='box'>
-                        <Avatar sx={avatarSize} />
+                        <Avatar sx={firstBlockStyle.avatarSize} />
                     </Grid>
                     <Grid className='box' item>
                         <IconButton className='icon'>
-                            <ChatIcon sx={iconSize} />
+                            <ChatIcon sx={firstBlockStyle.iconSize} />
                         </IconButton>
                     </Grid>
                     <Grid className='box' item>
                         <IconButton className='icon'>
-                            <PhoneIcon sx={iconSize} />
+                            <PhoneIcon sx={firstBlockStyle.iconSize} />
                         </IconButton>
                     </Grid>
                     <Grid className='box' item>
                         <IconButton className='icon'>
-                            <FavoriteIcon sx={iconSize} />
+                            <FavoriteIcon sx={firstBlockStyle.iconSize} />
                         </IconButton>
                     </Grid>
                 </Grid>
@@ -51,7 +43,7 @@ const FirstBlock = () => {
                     alignItems="center">
                     <Grid item className='box'>
                         <IconButton className='icon'>
-                            <SettingsIcon sx={iconSize} />
+                            <SettingsIcon sx={firstBlockStyle.iconSize} />
                         </IconButton>
                     </Grid>
                 </Grid>
