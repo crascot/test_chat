@@ -9,7 +9,8 @@ import { getChat } from "../../../../features/message/messageSlice";
 const ContactInfo = () => {
     const dispatch = useDispatch();
     const id = useSelector(state => state.peoples.id)
-    const currentContact = useSelector(state => state.peoples.currentContact)
+    const contacts = useSelector(state => state.peoples.contacts)
+    const currentContact = contacts.find(user => user.id === id)
 
     const sendImage = (event) => {
         let target = event.target;
@@ -36,14 +37,14 @@ const ContactInfo = () => {
             alignItems="center"
         >
             <Grid
-                item xs={11} container
+                item xs container
                 className='contact-info-left'
                 direction="row"
                 justifyContent="flex-start"
                 alignItems="center"
             >
                 <Avatar className="contact-avatar" src={currentContact.avatar} />
-                <Grid direction="column" justifyContent="space-between" alignItems="center">
+                <Grid item xs>
                     <Typography variant="h6" gutterBottom component="div">
                         {currentContact.name}
                     </Typography>

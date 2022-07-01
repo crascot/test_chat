@@ -18,7 +18,13 @@ export default function Chat() {
             className='chat'
         >
             {
-                currentChat.map(message => <Message align={message.align} img={message.img} message={message.message} key={Math.random()} />)
+                currentChat.map((m, index) =>
+                    <Message
+                        align={m.align}
+                        img={m.img}
+                        message={m.message}
+                        key={index}
+                    />)
             }
         </Grid>
     )
