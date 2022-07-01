@@ -17,7 +17,7 @@ const FirstBlock = () => {
                     direction="column"
                     justifyContent="flex-start"
                     alignItems="center">
-                    <Grid item className='box'>
+                    <Grid className='box' item>
                         <Avatar sx={firstBlockStyle.avatarSize} />
                     </Grid>
                     <Grid className='box' item>

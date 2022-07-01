@@ -2,6 +2,7 @@
     padding: 17.9px 30px;
     border-bottom: 1px solid #808080;
 }
+
 .contact-info .contact-info-left {
     flex-wrap: nowrap !important;
 }
@@ -11,12 +12,20 @@
     height: 70px !important;
     margin-right: 25px;
 }
+
 .contact-info .contact-status {
     display: flex;
     align-items: center;
 }
 
-.contact-info .send-image input { display: none; }
+.contact-info .send-image {
+    text-align: center;
+}
+
+.contact-info .send-image input {
+    display: none;
+}
+
 .contact-info .send-image .contact-button {
     width: 36px !important;
     height: 36px !important;
