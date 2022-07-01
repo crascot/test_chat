@@ -29,7 +29,7 @@
     font-size: 62px;
 }
 
-.fourth-block {
+.fourth-block div {
     animation-duration: 0.5s;
     animation-name: slidein;
   }
