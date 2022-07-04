@@ -9,3 +9,11 @@
     overflow-y: auto;
     height: inherit;
 }
+
+.grid {
+    padding: 15px;
+}
+
+.chat {
+    margin: 15px 0 -15px 0 !important;
+}

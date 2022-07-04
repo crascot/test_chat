@@ -5,33 +5,33 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { Grid, Avatar, IconButton } from '@mui/material';
 import { firstBlockStyle } from './firstBlockStyle';
-import './firstBlock.css';
+import s from './firstBlock.module.css';
 
 
 const FirstBlock = () => {
     return (
-        <Grid className='firstBlock' item xs={1}>
-            <div className='container'>
+        <Grid className={s.firstBlock} item xs={1}>
+            <div className={s.container}>
                 <Grid
                     container
                     direction="column"
                     justifyContent="flex-start"
                     alignItems="center">
-                    <Grid className='box' item>
+                    <Grid className={s.box} item>
                         <Avatar sx={firstBlockStyle.avatarSize} />
                     </Grid>
-                    <Grid className='box' item>
-                        <IconButton className='icon'>
+                    <Grid className={s.box} item>
+                        <IconButton className={s.icon}>
                             <ChatIcon sx={firstBlockStyle.iconSize} />
                         </IconButton>
                     </Grid>
-                    <Grid className='box' item>
-                        <IconButton className='icon'>
+                    <Grid className={s.box} item>
+                        <IconButton className={s.icon}>
                             <PhoneIcon sx={firstBlockStyle.iconSize} />
                         </IconButton>
                     </Grid>
-                    <Grid className='box' item>
-                        <IconButton className='icon'>
+                    <Grid className={s.box} item>
+                        <IconButton className={s.icon}>
                             <FavoriteIcon sx={firstBlockStyle.iconSize} />
                         </IconButton>
                     </Grid>
@@ -41,8 +41,8 @@ const FirstBlock = () => {
                     direction="column"
                     justifyContent="flex-end"
                     alignItems="center">
-                    <Grid item className='box'>
-                        <IconButton className='icon'>
+                    <Grid item className={s.box}>
+                        <IconButton className={s.icon}>
                             <SettingsIcon sx={firstBlockStyle.iconSize} />
                         </IconButton>
                     </Grid>

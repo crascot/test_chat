@@ -3,6 +3,7 @@ import { Grid, IconButton, InputBase } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import { useDispatch, useSelector } from "react-redux";
 import { getChat, writeMessage } from "../../../../features/message/messageSlice";
+import s from './send.module.css';
 
 const Send = () => {
     const dispatch = useDispatch()
@@ -28,7 +29,7 @@ const Send = () => {
         <Grid
             item
             container
-            className='send'
+            className={s.send}
             direction="row"
             justifyContent="center"
             alignItems="center"
@@ -40,12 +41,12 @@ const Send = () => {
                     onKeyDown={sendEnter}
                     fullWidth
                     placeholder="Write Message..."
-                    className='send-input'
+                    className={s.sendInput}
                 />
             </Grid>
             <Grid item>
-                <IconButton className='send-button' onClick={sendMessage}>
-                    <SendIcon className='send-icon' />
+                <IconButton className={s.sendButton} onClick={sendMessage}>
+                    <SendIcon className={s.sendIcon} />
                 </IconButton>
             </Grid>
         </Grid>

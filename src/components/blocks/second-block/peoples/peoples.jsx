@@ -1,28 +1,30 @@
 import React from 'react';
 import { Avatar, Typography } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
-import './peoples.css';
+import s from './peoples.module.css';
 import { useDispatch } from 'react-redux';
-import { getId } from '../../../../features/peoples/peoplesSlice';
-import { peoplesStyle } from './peoplesStyle';
+import { checkData, getId } from '../../../../features/peoples/peoplesSlice';
 
 
 const Peoples = ({ props }) => {
     const dispatch = useDispatch()
-    const onCurrentId = () => dispatch(getId(props.id))
+    const onCurrentId = () => {
+        dispatch(checkData(false))
+        dispatch(getId(props.id))
+    }
 
     return (
-        <div className='peoples' onClick={onCurrentId}>
-            <Avatar style={peoplesStyle.avatar} src={props.avatar} />
-            <div style={peoplesStyle.container}>
-                <div style={peoplesStyle.block}>
+        <div className={s.peoples} onClick={onCurrentId}>
+            <Avatar className={s.avatar} src={props.avatar} />
+            <div className={s.container}>
+                <div className={s.block}>
                     <Typography variant="h6" mb={0} component="div">
                         {props.name}
                     </Typography>
-                    <CheckIcon style={peoplesStyle.checkIcon} />
+                    <CheckIcon className={s.checkIcon} />
                 </div>
-                <div style={peoplesStyle.block}>
-                    <Typography variant="caption" display="block">
+                <div className={s.block}>
+                    <Typography variant="caption" component="div">
                         {props.username}
                     </Typography>
                     <Typography variant="caption" display="block">

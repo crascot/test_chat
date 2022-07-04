@@ -4,14 +4,14 @@ import ContactInfo from './contact-info/contactInfo';
 import Chat from './chat/chat';
 import Send from './send/send';
 import { Grid, Typography } from '@mui/material';
-import './thirdBlock.css';
+import s from './thirdBlock.module.css';
 
 
 const ThirdBlock = () => {
     const id = useSelector(state => state.peoples.id)
 
     return (
-        <Grid className='thirty-block'
+        <Grid className={s.thirtyBlock}
             item xs
             container
             direction="column"
@@ -20,7 +20,7 @@ const ThirdBlock = () => {
         >
             {
                 id === 0 ?
-                    <Grid className='zero-id'
+                    <Grid className={s.zeroId}
                         item xs
                         container
                         justifyContent="center"
@@ -31,7 +31,7 @@ const ThirdBlock = () => {
                         </Typography>
                     </Grid>
                     :
-                    <Grid className='contact-id'
+                    <Grid className={s.contactId}
                         item xs
                         container
                         direction="column"
