@@ -1,18 +1,17 @@
 .firstBlock {
     background-color: #0093E9;
-    padding: 15;
     box-shadow: 0px -1px 13px 3px rgba(0, 0, 0, 0.2);
 }
-.firstBlock .container {
+.container {
     height: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
 }
-.firstBlock .container .box {
+.box {
     margin: 15px 0 !important;
 }
 
-.firstBlock .container .box .icon {
+.icon {
     color: white !important;
 }

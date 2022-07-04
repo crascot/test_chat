@@ -1,22 +1,40 @@
-.fourth-block { 
+.fourth-block {
     background-color: white;
     border-left: 1px solid #808080;
     padding: 0 5px !important;
 }
 
-.fourth-block .contact { width: 100%; }
+.fourth-block .contact {
+    width: 100%;
+}
+
 .fourth-block .contact .avatar {
-    width: 15vw;
-    height: 15vw;
+    width: 297px;
+    height: 297px;
     margin: 0 auto;
 }
+
 .fourth-block .contact .name {
     text-align: center;
     margin-top: 25px;
-    font-size: 2.5vw;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.fourth-block .connection { padding: 0 25px; }
+.fourth-block .connection {
+    padding: 0 25px;
+}
+
 .fourth-block .connection svg {
     font-size: 62px;
 }
+
+.fourth-block div {
+    animation-duration: 0.5s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from { opacity: 0; }
+    to { opacity: 1;}
+  }

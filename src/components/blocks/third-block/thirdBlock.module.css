@@ -1,0 +1,12 @@
+.thirtyBlock {
+    background-color: white;
+    border-left: 1px solid #808080;
+    min-width: 300px !important;
+}
+
+.zeroId { padding: 15px; }
+.zeroId * { text-align: center; }
+.contactId {
+    flex-wrap: nowrap !important;
+    overflow: auto;
+}

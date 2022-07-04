@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import Message from './message/message';
 import { useSelector } from 'react-redux';
+import s from './chat.module.css';
 
 
 export default function Chat() {
@@ -15,7 +16,7 @@ export default function Chat() {
             item xs={9}
             justifyContent="flex-start"
             alignItems="stretch"
-            className='chat'
+            className={s.chat}
         >
             {
                 currentChat.map((m, index) =>

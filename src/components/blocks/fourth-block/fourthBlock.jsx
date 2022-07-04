@@ -14,6 +14,7 @@ import Icon from "./icons/icons";
 
 const FourthBlock = () => {
     const id = useSelector(state => state.peoples.id)
+    const data = useSelector(state => state.peoples.data)
     const contacts = useSelector(state => state.peoples.contacts)
     const currentContact = contacts.find(user => user.id === id)
 
@@ -35,7 +36,7 @@ const FourthBlock = () => {
         }
     ]
 
-    if (id) return (
+    if (data) return (
         <Grid item xs={3}
             container
             className='fourth-block'

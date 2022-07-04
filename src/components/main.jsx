@@ -4,13 +4,13 @@ import FirstBlock from './blocks/first-block/firstBlock';
 import SecondBlock from './blocks/second-block/secondBlock';
 import ThirdBlock from './blocks/third-block/thirdBlock';
 import FourthBlock from './blocks/fourth-block/fourthBlock';
-import './main.css';
+import s from './main.module.css';
 
 
 const Main = () => {
 
     return (
-        <Grid className='main'
+        <Grid className={s.main}
             direction="row"
             justifyContent="center"
             alignItems="stretch"

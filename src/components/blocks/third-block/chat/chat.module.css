@@ -1,0 +1,7 @@
+.chat {
+    margin-bottom: 17.9px !important;
+    padding: 0 30px !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: inherit !important;
+}

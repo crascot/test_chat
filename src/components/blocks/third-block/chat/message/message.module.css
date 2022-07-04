@@ -1,6 +1,7 @@
 .message {
     margin: 10px 0 !important;
 }
+
 .message .text {
     max-width: 17vw;
     width: max-content;
@@ -9,11 +10,12 @@
     background-image: linear-gradient(160deg, #0505fc 0%, #8b00ff 100%);
     color: white;
     border-radius: 10px;
+    word-break: break-all;
 }
+
 .message .image {
     border-radius: 5px;
     max-width: 20vw;
-    max-height: 25vh;
     width: max-content;
-    height: max-content;
+    pointer-events: none;
 }

@@ -1,5 +1,6 @@
 .main {
-    margin: -8px;
+    max-width: 88%;
+    margin: -8px auto;
     height: 100%;
     padding: 30px 15px;
 }
