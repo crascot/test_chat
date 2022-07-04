@@ -1,15 +1,15 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-import './message.css';
+import s from './message.module.css';
 
 
 const Message = ({ align, img, message }) => (
-    <Grid container justifyContent={align} className='message'>
+    <Grid container justifyContent={align} className={s.message}>
         {
             img ?
-                <img src={message} className='image' alt='img' />
+                <img src={message} className={s.image} alt='img' />
                 :
-                <Typography className="text">{message}</Typography>
+                <Typography className={s.text}>{message}</Typography>
         }
     </Grid>
 )
