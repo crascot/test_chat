@@ -13,7 +13,7 @@ export default function Chat() {
 
     return (
         <Grid
-            item xs={9}
+            item xs
             justifyContent="flex-start"
             alignItems="stretch"
             className={s.chat}

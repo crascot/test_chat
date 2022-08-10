@@ -22,3 +22,7 @@
     max-width: 430px;
     max-height: 343px;
 }
+
+.message .backdropImg {
+    width: 430px;
+}

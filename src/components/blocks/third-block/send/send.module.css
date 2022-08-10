@@ -1,6 +1,7 @@
 .send { 
     flex-wrap: nowrap !important;
-    padding: 0 30px 5px;
+    padding: 5px;
+    margin-top: 10px !important;
 }
 .sendInput {
     padding: 9px 12px 11px;
@@ -24,4 +25,18 @@
     margin-left: 6px;
     margin-bottom: 5px;
     color: white;
+}
+
+.sendImage {
+    text-align: center;
+}
+
+.sendImage input {
+    display: none;
+}
+.contactButton {
+    padding: 0;
+    width: 36px !important;
+    height: 36px !important;
+    transform: rotate(45deg);
 }

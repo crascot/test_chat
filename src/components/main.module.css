@@ -1,4 +1,5 @@
 .main {
+    flex-wrap: nowrap !important;
     max-width: 88%;
     margin: -8px auto;
     height: 100%;

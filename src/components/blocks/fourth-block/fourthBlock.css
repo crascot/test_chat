@@ -11,6 +11,8 @@
 .fourth-block .contact .avatar {
     width: 297px;
     height: 297px;
+    /* width: calc(40px + 256 * ((100vw - 320px) / 1980));
+    height: calc(40px + 256 * ((100vw - 320px) / 1980)); */
     margin: 0 auto;
 }
 

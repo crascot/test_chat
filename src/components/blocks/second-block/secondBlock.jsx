@@ -43,7 +43,7 @@ const SecondBlock = () => {
                         contactsBlock.length !== 0 ?
                             contactsBlock
                             :
-                            <Typography variant="h6" style={{ textAlign: 'center' }}>
+                            <Typography variant="h6" className={s.notFound}>
                                 Контакт не найден
                             </Typography>
                         :

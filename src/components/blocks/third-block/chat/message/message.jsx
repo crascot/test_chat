@@ -11,7 +11,11 @@ const Message = ({ align, img, message }) => {
     const handleToggle = () => setOpen(!open);
 
     return (
-        <Grid container justifyContent={align} className={s.message}>
+        <Grid
+            container
+            justifyContent={align}
+            className={s.message}
+        >
             {
                 img ?
                     <>
@@ -21,7 +25,7 @@ const Message = ({ align, img, message }) => {
                             open={open}
                             onClick={handleClose}
                         >
-                            <img src={message} style={{width: 430}} alt='img' />
+                            <img src={message} className={s.backdropImg} alt='img' />
                         </Backdrop>
                     </>
                     :

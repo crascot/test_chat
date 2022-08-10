@@ -47,7 +47,7 @@ const FourthBlock = () => {
             <Grid item xs={6} justifyContent='center' alignItems='flex-end' container>
                 <div className='contact'>
                     <Avatar className='avatar' src={currentContact.avatar} />
-                    <Typography className='name' variant="h4" gutterBottom component="div">
+                    <Typography className='name' variant="h4" gutterBottom>
                         {currentContact.name}
                     </Typography>
                 </div>
