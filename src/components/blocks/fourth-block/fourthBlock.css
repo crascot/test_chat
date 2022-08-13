@@ -1,7 +1,18 @@
 .fourth-block {
     background-color: white;
     border-left: 1px solid #808080;
+}
+
+.fourth-block .close-block {
+    background-color: #f0f2f5;
+    max-width: fit-content;
+    width: 100%;
+    height: 106.91px;
+    border-bottom: 1px solid #808080;
     padding: 0 5px !important;
+}
+.fourth-block .close-block button {
+    margin-right: 10px !important;
 }
 
 .fourth-block .contact {
@@ -9,10 +20,8 @@
 }
 
 .fourth-block .contact .avatar {
-    width: 297px;
-    height: 297px;
-    /* width: calc(40px + 256 * ((100vw - 320px) / 1980));
-    height: calc(40px + 256 * ((100vw - 320px) / 1980)); */
+    width: calc(40px + 256 * ((100vw - 320px) / 1980));
+    height: calc(40px + 256 * ((100vw - 320px) / 1980));
     margin: 0 auto;
 }
 
@@ -25,10 +34,13 @@
 
 .fourth-block .connection {
     padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .fourth-block .connection svg {
-    font-size: 62px;
+    font-size: calc(50px + 8 * ((100vw - 320px) / 1980));
 }
 
 .fourth-block div {
@@ -39,4 +51,25 @@
   @keyframes slidein {
     from { opacity: 0; }
     to { opacity: 1;}
+  }
+
+  @media (max-width: 1322px) {
+    .fourth-block .connection {
+        padding: 0 5px;
+    }
+  }
+
+  @media (max-width: 1252px) {
+    .avatar {
+        width: 230px !important;
+        height: 230px !important;
+    }
+    .connection svg {
+        font-size: 62px !important;
+    }
+
+    .fourth-block .connection {
+        max-width: 306px !important;
+        margin: 0 auto;
+    }
   }

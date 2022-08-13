@@ -20,6 +20,7 @@
     border-radius: 5px;
     pointer-events: none;
     max-width: 430px;
+    width: 100%;
     max-height: 343px;
 }
 

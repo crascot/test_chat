@@ -1,4 +1,5 @@
 .contactInfo {
+    background-color: #f0f2f5;
     max-height: 106.91px;
     padding: 15px 30px;
     border-bottom: 1px solid #808080;
@@ -12,6 +13,15 @@
     width: 70px !important;
     height: 70px !important;
     margin-right: 25px;
+}
+
+.contactInfoRight {
+    overflow: hidden;
+}
+.contactInfoRight h6 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .contactStatus {

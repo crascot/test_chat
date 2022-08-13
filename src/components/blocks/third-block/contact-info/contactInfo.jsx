@@ -18,7 +18,7 @@ const ContactInfo = () => {
             item xs={1} container
             className={s.contactInfo}
             direction="row"
-            justifyContent="space-between"
+            justifyContent="flex-start"
             alignItems="center"
         >
             <Button onClick={showData} color="inherit">
@@ -30,8 +30,8 @@ const ContactInfo = () => {
                     alignItems="center"
                 >
                     <Avatar className={s.contactAvatar} src={currentContact.avatar} />
-                    <Grid item xs>
-                        <Typography variant="h6" gutterBottom component="div">
+                    <Grid item xs className={s.contactInfoRight}>
+                        <Typography variant="h6" gutterBottom>
                             {currentContact.name}
                         </Typography>
                         <span className={s.contactStatus}>
