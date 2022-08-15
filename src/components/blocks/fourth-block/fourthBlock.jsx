@@ -69,6 +69,7 @@ const FourthBlock = () => {
                 container
                 justifyContent='center'
                 alignItems='center'
+                className='info'
             >
                 <div className='contact'>
                     <Avatar className='avatar' src={currentContact.avatar} />

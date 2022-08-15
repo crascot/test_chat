@@ -7,16 +7,17 @@
 }
 .contacts {
     overflow-y: auto;
-    height: calc(100% - 106.91px);
+    height: calc(100% - 93px);
 }
 
-.grid {
+.find {
+    background-color: #f0f2f5;
+    height: 93px;
     padding: 15px;
     border-bottom: 1px solid #808080;
 }
-
-.chat {
-    margin: 15px 0 -15px 0 !important;
+.find input {
+    background-color: white;
 }
 
 .notFound {

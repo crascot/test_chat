@@ -28,14 +28,11 @@ const SecondBlock = () => {
     return (
         <Grid className={s.secondBlock} item xs={2}>
             <Grid
-                className={s.grid}
-                justifyContent="flex-start"
-                alignItems="flex-start"
+                className={s.find}
+                justifyContent="center"
+                alignItems="center"
             >
                 <TextField value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search" fullWidth />
-                <Typography className={s.chat} color='gray' variant="caption" display="block" gutterBottom>
-                    Chats
-                </Typography>
             </Grid>
             <Grid item xs className={s.contacts}>
                 {
