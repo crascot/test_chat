@@ -27,19 +27,25 @@ const Send = () => {
     }
 
     const sendImage = (event) => {
-        let target = event.target;
-        if (!target.files.length) return;
-        let fileReader = new FileReader();
-        fileReader.onload = function () {
-            let mess = {
-                id: id,
-                align: 'right',
-                img: true,
-                message: fileReader.result
+        if (!event.target.files.length) return;
+
+        const files = Array.from(event.target.files)
+        files.forEach(file => {
+            if (!file.type.match('image')) return;
+
+            const reader = new FileReader()
+
+            reader.onload = (ev) => {
+                let mess = {
+                    id: id,
+                    align: 'right',
+                    img: true,
+                    message: ev.target.result
+                }
+                dispatch(getChat(mess))
             }
-            dispatch(getChat(mess))
-        }
-        fileReader.readAsDataURL(target.files[0]);
+            reader.readAsDataURL(file)
+        })
     }
 
     return (
@@ -53,7 +59,7 @@ const Send = () => {
         >
             <Grid item xs className={s.sendImage}>
                 <label htmlFor="icon-button-file">
-                    <input onChange={sendImage} id="icon-button-file" type="file" accept="image/jpeg,image/png,image/gif" />
+                    <input onChange={sendImage} id="icon-button-file" type="file" accept="image/jpeg,image/png,image/gif" multiple />
                     <IconButton aria-label="upload picture" component="span">
                         <AttachFileIcon className={s.contactButton} />
                     </IconButton>
