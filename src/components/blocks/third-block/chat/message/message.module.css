@@ -13,9 +13,17 @@
     word-break: break-all;
 }
 
-.message .image {
+.message .imageBlock {
+    cursor: pointer;
+}
+.message .imageBlock img {
     border-radius: 5px;
-    max-width: 20vw;
-    width: max-content;
     pointer-events: none;
+    max-width: 430px;
+    width: 100%;
+    max-height: 343px;
+}
+
+.message .backdropImg {
+    width: 430px;
 }

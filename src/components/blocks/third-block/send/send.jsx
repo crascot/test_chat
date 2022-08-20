@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid, IconButton, InputBase } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
+import AttachFileIcon from '@mui/icons-material/AttachFile';
 import { useDispatch, useSelector } from "react-redux";
 import { getChat, writeMessage } from "../../../../features/message/messageSlice";
 import s from './send.module.css';
@@ -25,15 +26,45 @@ const Send = () => {
         if (e.key === "Enter") sendMessage();
     }
 
+    const sendImage = (event) => {
+        if (!event.target.files.length) return;
+
+        const files = Array.from(event.target.files)
+        files.forEach(file => {
+            if (!file.type.match('image')) return;
+
+            const reader = new FileReader()
+
+            reader.onload = (ev) => {
+                let mess = {
+                    id: id,
+                    align: 'right',
+                    img: true,
+                    message: ev.target.result
+                }
+                dispatch(getChat(mess))
+            }
+            reader.readAsDataURL(file)
+        })
+    }
+
     return (
         <Grid
             item
             container
             className={s.send}
             direction="row"
-            justifyContent="center"
+            justifyContent="space-between"
             alignItems="center"
         >
+            <Grid item xs className={s.sendImage}>
+                <label htmlFor="icon-button-file">
+                    <input onChange={sendImage} id="icon-button-file" type="file" accept="image/jpeg,image/png,image/gif" multiple />
+                    <IconButton aria-label="upload picture" component="span">
+                        <AttachFileIcon className={s.contactButton} />
+                    </IconButton>
+                </label>
+            </Grid>
             <Grid item xs={12}>
                 <InputBase
                     value={message}
