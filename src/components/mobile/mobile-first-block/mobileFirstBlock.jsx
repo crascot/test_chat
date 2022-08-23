@@ -5,13 +5,21 @@ import SearchIcon from '@mui/icons-material/Search';
 import SettingsIcon from '@mui/icons-material/Settings';
 import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { findContact } from "../../../features/peoples/peoplesSlice";
+import { useSelector } from "react-redux";
 
 
 const MobileFirstBlock = () => {
+    const dispatch = useDispatch()
+
     const [searchVisible, setSearchVisible] = useState(false)
+    const search = useSelector(state => state.peoples.search)
 
     const visibleInput = () => setSearchVisible(true)
     const hideinput = () => setSearchVisible(false)
+
+    const find = (event) => dispatch(findContact(event.target.value))
 
     return (
         <Grid
@@ -27,7 +35,7 @@ const MobileFirstBlock = () => {
                     searchVisible ?
                         <Grid item xs>
                             <FormControl
-                                className={s.search}
+                                className={s.searching}
                                 variant="filled"
                                 fullWidth
                             >
@@ -39,8 +47,8 @@ const MobileFirstBlock = () => {
                                         >
                                             <KeyboardReturnIcon />
                                         </IconButton>}
-                                // value={}
-                                // onChange={}
+                                    value={search}
+                                    onChange={find}
                                 />
                             </FormControl>
                         </Grid>

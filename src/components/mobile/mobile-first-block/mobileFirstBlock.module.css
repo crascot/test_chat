@@ -1,12 +1,12 @@
 .mobileFirstBlock {
-    padding: 10px 0 20px 10px;
-    min-height: 86px;
+    padding: 10px 15px 10px 25px;
+    min-height: 76px;
 }
-.search {
+.searching {
     background-color: white;
     margin-right: 10px !important;
 }
-.search, .search * {
+.searching, .searching * {
     border-radius: 10px !important;
 }
 .settings {

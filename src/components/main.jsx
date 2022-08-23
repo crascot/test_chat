@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Grid from '@mui/material/Grid';
 import FirstBlock from './desktop/first-block/firstBlock';
 import SecondBlock from './desktop/second-block/secondBlock';
 import ThirdBlock from './desktop/third-block/thirdBlock';
 import FourthBlock from './desktop/fourth-block/fourthBlock';
 import s from './main.module.css';
-import { useEffect } from 'react';
-import { useState } from 'react';
 import MobileFirstBlock from './mobile/mobile-first-block/mobileFirstBlock';
+import MobileSecondBlock from './mobile/mobile-second-block/mobileSecondBlock';
+import { Users } from '../api';
+import { getContacts, ready } from '../features/peoples/peoplesSlice';
+import { useDispatch } from 'react-redux';
 
 
 const Main = () => {
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        Users()
+            .then(user => {
+                dispatch(getContacts(user))
+                dispatch(ready())
+            })
+    }, [])
+
     const desktop = (
         <Grid className={s.desktop}
             direction="row"
@@ -32,6 +44,7 @@ const Main = () => {
             alignItems="center"
         >
             <MobileFirstBlock />
+            <MobileSecondBlock />
         </Grid>
     )
 

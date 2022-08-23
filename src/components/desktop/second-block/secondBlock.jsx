@@ -1,29 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { CircularProgress, Grid, TextField, Typography } from '@mui/material';
 import Peoples from './peoples/peoples';
 import { useDispatch, useSelector } from 'react-redux';
 import s from './secondBlock.module.css';
-import { getContacts, ready } from '../../../features/peoples/peoplesSlice';
-import { Users } from '../../../api';
+import { findContact } from '../../../features/peoples/peoplesSlice';
 
 
 const SecondBlock = () => {
     const dispatch = useDispatch()
 
-    const [search, setSearch] = useState('')
     const contacts = useSelector(state => state.peoples.contacts)
+    const search = useSelector(state => state.peoples.search)
     const isReady = useSelector(state => state.peoples.isReady)
 
-    const findContact = contacts.filter(contact => contact.name.toLowerCase().includes(search.toLocaleLowerCase()))
-    const contactsBlock = findContact.map((props => <Peoples props={props} key={props.id} />))
+    const contactsBlock = contacts
+        .filter(contact => contact.name.toLowerCase().includes(search.toLocaleLowerCase()))
+        .map((props => <Peoples props={props} key={props.id} />))
 
-    useEffect(() => {
-        Users()
-            .then(user => {
-                dispatch(getContacts(user))
-                dispatch(ready())
-            })
-    }, [])
+    const find = (event) => dispatch(findContact(event.target.value))
 
     return (
         <Grid className={s.secondBlock} item xs={2}>
@@ -32,7 +26,12 @@ const SecondBlock = () => {
                 justifyContent="center"
                 alignItems="center"
             >
-                <TextField value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search" fullWidth />
+                <TextField
+                    value={search}
+                    onChange={find}
+                    placeholder="Search"
+                    fullWidth
+                />
             </Grid>
             <Grid item xs className={s.contacts}>
                 {
