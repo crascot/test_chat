@@ -10,6 +10,7 @@ import MobileSecondBlock from './mobile/mobile-second-block/mobileSecondBlock';
 import { Users } from '../api';
 import { getContacts, ready } from '../features/peoples/peoplesSlice';
 import { useDispatch } from 'react-redux';
+import MobileThirdBlock from './mobile/mobile-third-block/mobileThirdblock';
 
 
 const Main = () => {
@@ -45,6 +46,7 @@ const Main = () => {
         >
             <MobileFirstBlock />
             <MobileSecondBlock />
+            <MobileThirdBlock />
         </Grid>
     )
 

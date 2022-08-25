@@ -10,6 +10,7 @@ body, #root {
 @media (max-width: 1030px) {
     html {
         background-image: none !important;
+        background-color: white;
     }
     body {
         margin: 0;
