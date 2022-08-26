@@ -16,7 +16,7 @@ export default function Chat() {
 
     useEffect(() => {
         if(window.innerWidth <= 1030) {
-            setChatHeight(window.innerHeight - 251)
+            setChatHeight(window.innerHeight - 152.72)
         }
     }, [window.innerWidth, window.innerHeight])
 

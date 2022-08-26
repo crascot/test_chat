@@ -3,7 +3,7 @@ import { FormControl, Grid, IconButton, OutlinedInput, Typography } from "@mui/m
 import s from './mobileFirstBlock.module.css';
 import SearchIcon from '@mui/icons-material/Search';
 import SettingsIcon from '@mui/icons-material/Settings';
-import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { findContact } from "../../../features/peoples/peoplesSlice";
@@ -14,6 +14,7 @@ const MobileFirstBlock = () => {
     const dispatch = useDispatch()
 
     const [searchVisible, setSearchVisible] = useState(false)
+    const id = useSelector(state => state.peoples.id)
     const search = useSelector(state => state.peoples.search)
 
     const visibleInput = () => setSearchVisible(true)
@@ -21,7 +22,7 @@ const MobileFirstBlock = () => {
 
     const find = (event) => dispatch(findContact(event.target.value))
 
-    return (
+    if (id === 0) return (
         <Grid
             className={s.mobileFirstBlock}
             item xs
@@ -45,7 +46,7 @@ const MobileFirstBlock = () => {
                                             onClick={hideinput}
                                             position='start'
                                         >
-                                            <KeyboardReturnIcon />
+                                            <ArrowBackIcon />
                                         </IconButton>}
                                     value={search}
                                     onChange={find}
@@ -60,7 +61,7 @@ const MobileFirstBlock = () => {
                                 justifyContent='flex-start'
                             >
                                 <Typography
-                                    fontSize={26}
+                                    fontSize={20}
                                     variant="h4"
                                     fontWeight='600'
                                     color='white'
