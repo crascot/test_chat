@@ -47,6 +47,7 @@ const Main = () => {
             <MobileFirstBlock />
             <MobileSecondBlock />
             <MobileThirdBlock />
+            <FourthBlock />
         </Grid>
     )
 

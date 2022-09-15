@@ -38,7 +38,7 @@ const ContactInfo = () => {
                 window.innerWidth <= 1030 ?
                     <Grid
                         item xs={1} container
-                        justifyContent='flex-start'
+                        justifyContent='center'
                         alignItems='center'
                     >
                         <IconButton onClick={resetId}>

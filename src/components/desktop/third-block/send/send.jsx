@@ -59,9 +59,15 @@ const Send = () => {
         >
             <Grid item xs className={s.sendImage}>
                 <label htmlFor="icon-button-file">
-                    <input onChange={sendImage} id="icon-button-file" type="file" accept="image/jpeg,image/png,image/gif" multiple />
+                    <input
+                        onChange={sendImage}
+                        id="icon-button-file"
+                        type="file"
+                        accept="image/jpeg,image/png,image/gif"
+                        multiple
+                    />
                     <IconButton aria-label="upload picture" component="span">
-                        <AttachFileIcon className={s.contactButton} />
+                        <AttachFileIcon fontSize="large" className={s.contactButton} />
                     </IconButton>
                 </label>
             </Grid>
@@ -77,7 +83,7 @@ const Send = () => {
             </Grid>
             <Grid item>
                 <IconButton className={s.sendButton} onClick={sendMessage}>
-                    <SendIcon className={s.sendIcon} />
+                    <SendIcon className={s.sendIcon} fontSize='large' />
                 </IconButton>
             </Grid>
         </Grid>

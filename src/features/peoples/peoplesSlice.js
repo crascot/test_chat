@@ -5,7 +5,7 @@ const initialState = {
   contacts: [],
   data: false,
   isReady: false,
-  search: ''
+  search: '',
 }
 
 export const peoplesSlice = createSlice({
@@ -17,7 +17,7 @@ export const peoplesSlice = createSlice({
     checkData: (state, action) => { state.data = action.payload },
     switchData: (state) => { state.data = !state.data },
     ready: (state) => { state.isReady = !state.isReady },
-    findContact: (state, action) => { state.search = action.payload }
+    findContact: (state, action) => { state.search = action.payload },
   }
 })
 

@@ -27,3 +27,12 @@
 .message .backdropImg {
     width: 430px;
 }
+
+@media (max-width: 1030px) {
+    .message .text {
+        max-width: 70%;
+    }
+    .backdropImg {
+        max-width: 100%;
+    }
+}
