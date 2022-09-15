@@ -4,4 +4,12 @@
     margin: -8px auto;
     height: 100%;
     padding: 30px 15px;
+    overflow: hidden;
+}
+
+@media (min-width: 1031px) and (max-width: 1252px) {
+    .desktop {
+        max-width: 100%;
+        padding: 0;
+    }
 }

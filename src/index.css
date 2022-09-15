@@ -7,6 +7,12 @@ body, #root {
     height: 100%;
 }
 
+@media (min-width: 1031px) and (max-width: 1252px) {
+    body {
+        margin: 8px 0;
+    }
+}
+
 @media (max-width: 1030px) {
     html {
         background-image: none !important;
