@@ -27,3 +27,21 @@
     display: flex;
     align-items: center;
 }
+
+@media (max-width: 1030px) {
+    .contactInfo {
+        padding: 5px 10px;
+    }
+    .parentButton {
+        margin-left: 8px !important;
+    }
+    .contactAvatar {
+        width: 45px !important;
+        height: 45px !important;
+        margin-right: 10px;
+    }
+    .contactStatus svg {
+        width: 15px !important;
+        height: 15px !important;
+    }
+}

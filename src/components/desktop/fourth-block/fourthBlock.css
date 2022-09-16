@@ -58,7 +58,6 @@
         padding: 0 5px;
     }
   }
-
   @media (max-width: 1252px) {
     .avatar {
         width: 230px !important;
@@ -71,5 +70,14 @@
     .fourth-block .connection {
         max-width: 306px !important;
         margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 1030px) {
+    .fourth-block {
+        border-left: none;
+    }
+    .info {
+        margin-top: 15vh !important;
     }
   }

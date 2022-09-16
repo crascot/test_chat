@@ -21,7 +21,7 @@ const Message = ({ align, img, message }) => {
                     <>
                         <div onClick={handleToggle} className={s.imageBlock}><img src={message} alt='img' /></div>
                         <Backdrop
-                            sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1, padding: 30 }}
+                            sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1, padding: 5 }}
                             open={open}
                             onClick={handleClose}
                         >

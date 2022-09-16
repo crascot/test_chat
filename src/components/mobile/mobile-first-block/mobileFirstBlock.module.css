@@ -1,0 +1,25 @@
+.mobileFirstBlock {
+    background-color: #0093E9;
+    padding: 10px 15px 10px 25px;
+    min-height: 76px;
+}
+.searching {
+    background-color: white;
+    margin-right: 10px !important;
+}
+.searching, .searching * {
+    border-radius: 10px !important;
+}
+.settings {
+    max-width: max-content !important;
+}
+.iconButton {
+    width: 50px !important;
+    height: 50px !important;
+    padding: 0 !important;
+}
+.icon {
+    color: white;
+    width: 30px !important;
+    height: 30px !important;
+}
