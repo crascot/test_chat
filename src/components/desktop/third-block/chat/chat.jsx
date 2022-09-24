@@ -24,7 +24,7 @@ export default function Chat() {
     useEffect(() => {
         messagesEndRef.current.scrollIntoView()
     }, [chat])
-    
+
 
     return (
         <Grid

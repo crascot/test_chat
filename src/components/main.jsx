@@ -16,10 +16,17 @@ import MobileThirdBlock from './mobile/mobile-third-block/mobileThirdblock';
 const Main = () => {
     const dispatch = useDispatch()
 
+    const copyCat = {
+        id: 11,
+        avatar: 'https://assets.mycast.io/characters/sylvester-the-cat-911431-normal.jpg?1597174259',
+        name: 'CopyCat',
+        username: 'bot',
+    }
+
     useEffect(() => {
         Users()
             .then(user => {
-                dispatch(getContacts(user))
+                dispatch(getContacts([copyCat, ...user]))
                 dispatch(ready())
             })
     }, [])

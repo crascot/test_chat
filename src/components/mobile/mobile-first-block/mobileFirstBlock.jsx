@@ -1,5 +1,5 @@
 import React from "react";
-import { FormControl, Grid, IconButton, OutlinedInput, Typography } from "@mui/material";
+import { Backdrop, FormControl, Grid, IconButton, OutlinedInput, Typography } from "@mui/material";
 import s from './mobileFirstBlock.module.css';
 import SearchIcon from '@mui/icons-material/Search';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { findContact } from "../../../features/peoples/peoplesSlice";
 import { useSelector } from "react-redux";
+import ChangeAvatar from "../../changeAvatar/changeAvatar";
 
 
 const MobileFirstBlock = () => {
@@ -21,6 +22,11 @@ const MobileFirstBlock = () => {
     const hideinput = () => setSearchVisible(false)
 
     const find = (event) => dispatch(findContact(event.target.value))
+
+    const [open, setOpen] = useState(false);
+    const handleToggle = () => {
+        setOpen(!open);
+    };
 
     if (id === 0) return (
         <Grid
@@ -90,9 +96,15 @@ const MobileFirstBlock = () => {
                 container
                 justifyContent='center'
             >
-                <IconButton className={s.iconButton}>
+                <IconButton className={s.iconButton} onClick={handleToggle}>
                     <SettingsIcon className={s.icon} />
                 </IconButton>
+                <Backdrop
+                    sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                    open={open}
+                >
+                    <ChangeAvatar setOpen={setOpen} />
+                </Backdrop>
             </Grid>
         </Grid>
     )

@@ -18,6 +18,7 @@
     overflow: hidden;
 }
 .contactInfoRight h6 {
+    text-align: left;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -26,6 +27,25 @@
 .contactStatus {
     display: flex;
     align-items: center;
+}
+
+.writingText {
+    width: 189.78px !important;
+    display: flex;
+    align-items: center;
+    height: 27.34px;
+}
+.writing {
+    height: 27.34px !important;
+    display: flex;
+    align-items: center !important;
+    animation: typing 1s infinite;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
 }
 
 @media (max-width: 1030px) {

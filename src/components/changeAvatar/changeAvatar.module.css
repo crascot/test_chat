@@ -1,0 +1,23 @@
+.changeAvatarCard {
+    min-width: 275;
+    width: 100%;
+    max-width: max-content;
+    padding: 5px;
+}
+
+.changeAvatarContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0 !important;
+}
+
+.changeAvatarContent input {
+    display: none;
+}
+.changeAvatarCard .avatar {
+    width: 260px;
+    height: 260px;
+    cursor: pointer;
+}

@@ -6,6 +6,7 @@ const initialState = {
   data: false,
   isReady: false,
   search: '',
+  writing: false
 }
 
 export const peoplesSlice = createSlice({
@@ -18,9 +19,10 @@ export const peoplesSlice = createSlice({
     switchData: (state) => { state.data = !state.data },
     ready: (state) => { state.isReady = !state.isReady },
     findContact: (state, action) => { state.search = action.payload },
+    isWriting: (state, action) => { state.writing = action.payload },
   }
 })
 
-export const { getId, getContacts, checkData, switchData, ready, findContact } = peoplesSlice.actions
+export const { getId, getContacts, checkData, switchData, ready, findContact, isWriting } = peoplesSlice.actions
 
 export default peoplesSlice.reducer

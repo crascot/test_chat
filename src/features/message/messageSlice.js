@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   chat: [],
-  message: ''
+  message: '',
 }
 
 export const messageSlice = createSlice({

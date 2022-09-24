@@ -1,3 +1,7 @@
+* img {
+    pointer-events: none;
+}
+
 .desktop {
     flex-wrap: nowrap !important;
     max-width: 88%;
