@@ -3,8 +3,9 @@ import { Avatar, Button, Grid, IconButton, Typography } from "@mui/material";
 import CircleIcon from '@mui/icons-material/Circle';
 import { useDispatch, useSelector } from "react-redux";
 import s from './contact-info.module.css';
-import { getId, switchData } from "../../../../features/peoples/peoplesSlice";
+import { checkData, getId } from "../../../../features/peoples/peoplesSlice";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import FindMess from "./findMessage/findMessage";
 
 const ContactInfo = () => {
     const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const ContactInfo = () => {
     const writing = useSelector(state => state.peoples.writing)
     const currentContact = contacts.find(user => user.id === id)
 
-    const showData = () => dispatch(switchData())
+    const showData = () => dispatch(checkData('user'))
 
     const [width, setWidth] = useState(1)
     const [size, setSize] = useState('medium')
@@ -34,59 +35,62 @@ const ContactInfo = () => {
             item xs={width} container
             className={s.contactInfo}
             direction="row"
-            justifyContent="flex-start"
+            justifyContent="space-between"
             alignItems="center"
         >
-            {
-                window.innerWidth <= 1030 ?
+            <Grid item container alignItems="center">
+                {
+                    window.innerWidth <= 1030 ?
+                        <Grid
+                            item xs={1} container
+                            justifyContent='center'
+                            alignItems='center'
+                        >
+                            <IconButton onClick={resetId}>
+                                <ArrowBackIcon fontSize={size} />
+                            </IconButton>
+                        </Grid>
+                        :
+                        null
+                }
+                <Button className={s.parentButton} onClick={showData} color="inherit">
                     <Grid
-                        item xs={1} container
-                        justifyContent='center'
-                        alignItems='center'
+                        item xs container
+                        className={s.contactInfoLeft}
+                        direction="row"
+                        justifyContent="flex-start"
+                        alignItems="center"
                     >
-                        <IconButton onClick={resetId}>
-                            <ArrowBackIcon fontSize={size} />
-                        </IconButton>
-                    </Grid>
-                    :
-                    null
-            }
-            <Button className={s.parentButton} onClick={showData} color="inherit">
-                <Grid
-                    item xs container
-                    className={s.contactInfoLeft}
-                    direction="row"
-                    justifyContent="flex-start"
-                    alignItems="center"
-                >
-                    <Avatar className={s.contactAvatar} src={currentContact.avatar} />
-                    <Grid item xs className={s.contactInfoRight}>
-                        <Typography fontSize={size} variant="h6" gutterBottom>
-                            {currentContact.name}
-                        </Typography>
-                        <span className={s.contactStatus}>
-                            {
-                                writing && id === 11 ?
-                                    <Typography
-                                        className={s.writingText}
-                                        height={writingTextHeight}
-                                        variant="h6"
-                                        fontSize='small'
-                                    >
-                                        Печатает<span className={s.writing}>...</span>
-                                    </Typography>
-                                    :
-                                    <>
-                                        <CircleIcon fontSize={size} color='success' />
-                                        <Typography fontSize={size} mt={0.1} mb={0} ml={1} variant="caption" display="block" gutterBottom>
-                                            Online
+                        <Avatar className={s.contactAvatar} src={currentContact.avatar} />
+                        <Grid item xs className={s.contactInfoRight}>
+                            <Typography fontSize={size} variant="h6" gutterBottom>
+                                {currentContact.name}
+                            </Typography>
+                            <span className={s.contactStatus}>
+                                {
+                                    writing && id === 11 ?
+                                        <Typography
+                                            className={s.writingText}
+                                            height={writingTextHeight}
+                                            variant="h6"
+                                            fontSize='small'
+                                        >
+                                            Печатает<span className={s.writing}>...</span>
                                         </Typography>
-                                    </>
-                            }
-                        </span>
+                                        :
+                                        <>
+                                            <CircleIcon fontSize={size} color='success' />
+                                            <Typography fontSize={size} mt={0.1} mb={0} ml={1} variant="caption" display="block" gutterBottom>
+                                                Online
+                                            </Typography>
+                                        </>
+                                }
+                            </span>
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Button>
+                </Button>
+            </Grid>
+            <Grid item><FindMess /></Grid>
         </Grid>
     )
 }

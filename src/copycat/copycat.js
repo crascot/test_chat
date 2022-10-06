@@ -5,14 +5,16 @@ const copyCat = (id, messType, message) => {
             mess = {
                 id: id,
                 align: 'left',
-                message: message
+                message: message,
+                date: `${new Date().getHours()}:${new Date().getMinutes()}`
             }
             :
             mess = {
                 id: id,
                 align: 'left',
                 img: true,
-                message: message
+                message: message,
+                date: `${new Date().getHours()}:${new Date().getMinutes()}`
             }
         resolve(mess)
     })
