@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Grid, IconButton, InputBase } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import { useDispatch, useSelector } from "react-redux";
 import { getChat, writeMessage } from "../../../../features/message/messageSlice";
 import s from './send.module.css';
+import copyCat from "../../../../copycat/copycat";
+import { isWriting } from "../../../../features/peoples/peoplesSlice";
 
 const Send = () => {
     const dispatch = useDispatch()
     const id = useSelector(state => state.peoples.id)
     const message = useSelector(state => state.message.message)
+    const chat = useSelector(state => state.message.chat)
 
     const onWriteMessage = (e) => dispatch(writeMessage(e.target.value))
     const sendMessage = () => {
@@ -21,6 +24,17 @@ const Send = () => {
 
         dispatch(getChat(mess))
         dispatch(writeMessage(''))
+
+        if (id === 11) {
+            if (message.trim().length !== 0) dispatch(isWriting(true))
+            copyCat(id, 'text', message.trim())
+                .then((e) => {
+                    setTimeout(() => {
+                        dispatch(getChat(e))
+                        dispatch(isWriting(false))
+                    }, 1500);
+                })
+        }
     }
     const sendEnter = (e) => {
         if (e.key === "Enter") sendMessage();
@@ -28,11 +42,10 @@ const Send = () => {
 
     const sendImage = (event) => {
         if (!event.target.files.length) return;
-
         const files = Array.from(event.target.files)
+
         files.forEach(file => {
             if (!file.type.match('image')) return;
-
             const reader = new FileReader()
 
             reader.onload = (ev) => {
@@ -43,10 +56,31 @@ const Send = () => {
                     message: ev.target.result
                 }
                 dispatch(getChat(mess))
+
+                if (id === 11) {
+                    dispatch(isWriting(true))
+                    copyCat(id, '', ev.target.result)
+                        .then((e) => {
+                            setTimeout(() => {
+                                dispatch(getChat(e))
+                                dispatch(isWriting(false))
+                            }, 1500);
+                        })
+                }
             }
             reader.readAsDataURL(file)
         })
     }
+
+    const mess = {
+        id: 11,
+        align: 'left',
+        message: 'Привет, я CopyCat и я буду копировать твои сообщения которые ты мне отправляешь'
+    }
+
+    useEffect(() => {
+        if (chat.length === 0) dispatch(getChat(mess))
+    }, [chat])
 
     return (
         <Grid
@@ -58,12 +92,12 @@ const Send = () => {
             alignItems="center"
         >
             <Grid item xs className={s.sendImage}>
-                <label htmlFor="icon-button-file">
+                <label htmlFor="send-image-file">
                     <input
                         onChange={sendImage}
-                        id="icon-button-file"
+                        id="send-image-file"
                         type="file"
-                        accept="image/jpeg,image/png,image/gif"
+                        accept="image/jpeg,image/png,image/gif,image/webp"
                         multiple
                     />
                     <IconButton aria-label="upload picture" component="span">

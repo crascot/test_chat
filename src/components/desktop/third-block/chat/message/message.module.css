@@ -3,7 +3,7 @@
 }
 
 .message .text {
-    max-width: 17vw;
+    max-width: 17.4vw;
     width: max-content;
     padding: 10px;
     position: relative;
@@ -30,7 +30,7 @@
 
 @media (max-width: 1030px) {
     .message .text {
-        max-width: 70%;
+        max-width: 68%;
     }
     .backdropImg {
         max-width: 100%;
