@@ -20,7 +20,7 @@ const ThirdBlock = () => {
             if (data) setHide('none')
             else setHide('flex')
         }
-    }, [data])
+    }, [window.innerWidth, data])
 
     return (
         <Grid className={s.thirtyBlock}

@@ -44,6 +44,7 @@
 }
 
 .fourth-block .info {
+    width: 100%;
     animation-duration: 0.5s;
     animation-name: slidein;
   }
@@ -51,6 +52,15 @@
   @keyframes slidein {
     from { opacity: 0; }
     to { opacity: 1;}
+  }
+
+  .fourth-block .container-search-message {
+    width: 100%;
+  }
+
+  .fourth-block .container-input {
+    padding: 15px;
+    border-bottom: 1px solid #808080;
   }
 
   @media (max-width: 1322px) {

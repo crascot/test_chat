@@ -19,7 +19,8 @@ const Send = () => {
         let mess = {
             id: id,
             align: 'right',
-            message: message.trim()
+            message: message.trim(),
+            date: `${new Date().getHours()}:${new Date().getMinutes()}`
         }
 
         dispatch(getChat(mess))
@@ -53,7 +54,8 @@ const Send = () => {
                     id: id,
                     align: 'right',
                     img: true,
-                    message: ev.target.result
+                    message: ev.target.result,
+                    date: `${new Date().getHours()}:${new Date().getMinutes()}`
                 }
                 dispatch(getChat(mess))
 
@@ -75,7 +77,8 @@ const Send = () => {
     const mess = {
         id: 11,
         align: 'left',
-        message: 'Привет, я CopyCat и я буду копировать твои сообщения которые ты мне отправляешь'
+        message: 'Привет, я CopyCat и я буду копировать твои сообщения которые ты мне отправляешь',
+        date: `${new Date().getHours()}:${new Date().getMinutes()}`
     }
 
     useEffect(() => {

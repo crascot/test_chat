@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Avatar, Typography, IconButton } from "@mui/material";
+import { Grid, Avatar, Typography, IconButton, TextField } from "@mui/material";
 import { fourthBlockStyle } from "./fourthBlockStyle";
 import './fourthBlock.css';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
@@ -15,6 +15,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { checkData } from "../../../features/peoples/peoplesSlice";
+import SearchMessage from "./search-message/searchMessage";
 
 
 const FourthBlock = () => {
@@ -22,10 +23,14 @@ const FourthBlock = () => {
 
     const id = useSelector(state => state.peoples.id)
     const data = useSelector(state => state.peoples.data)
+    const chat = useSelector(state => state.message.chat)
     const contacts = useSelector(state => state.peoples.contacts)
     const currentContact = contacts.find(user => user.id === id)
     const [size, setSize] = useState(3)
-    const close = () => dispatch(checkData(false))
+    const close = () => {
+        setSearch('')
+        dispatch(checkData(false))
+    }
 
     useEffect(() => {
         if (window.innerWidth <= 1252) setSize(false)
@@ -50,6 +55,13 @@ const FourthBlock = () => {
         }
     ]
 
+    const [search, setSearch] = useState('')
+    const changeSearch = (e) => setSearch(e.target.value)
+
+    const findMess = chat
+        .filter(mess => mess.message.toLowerCase().includes(search.toLocaleLowerCase()) && mess.id === id && !mess.img)
+        .map(((mess, index) => <SearchMessage mess={mess} key={index} />))
+
     if (data) return (
         <Grid item xs={size}
             container
@@ -63,24 +75,48 @@ const FourthBlock = () => {
                 alignItems="center"
             >
                 <IconButton onClick={close}><CloseIcon /></IconButton>
-                <Typography variant="h5">Данные контакта</Typography>
+                <Typography variant="h5">
+                    {data === 'user' ? 'Данные контакта' : 'Поиск сообщения'}
+                </Typography>
             </Grid>
-            <Grid item xs
-                container
-                justifyContent='center'
-                alignItems='center'
-                className='info'
-            >
-                <div className='contact'>
-                    <Avatar className='avatar' src={currentContact.avatar} />
-                    <Typography className='name' variant="h4" gutterBottom>
-                        {currentContact.name}
-                    </Typography>
-                    <div className='connection'>
-                        {icons.map((i, index) => <Icon i={i} key={index} />)}
-                    </div>
-                </div>
-            </Grid>
+            {
+                data === 'user' ?
+                    <Grid item xs
+                        container
+                        justifyContent='center'
+                        alignItems='center'
+                        className='info'
+                    >
+                        <div className='contact'>
+                            <Avatar className='avatar' src={currentContact.avatar} />
+                            <Typography className='name' variant="h4" gutterBottom>
+                                {currentContact.name}
+                            </Typography>
+                            <div className='connection'>
+                                {icons.map((i, index) => <Icon i={i} key={index} />)}
+                            </div>
+                        </div>
+                    </Grid>
+                    :
+                    <Grid item xs className='container-search-message'>
+                        <div className="container-input">
+                            <TextField
+                                value={search}
+                                onChange={changeSearch}
+                                variant="outlined"
+                                fullWidth
+                            />
+                        </div>
+                        <div>
+                            {
+                                findMess.length && search.length > 0 ?
+                                    findMess
+                                    :
+                                    null
+                            }
+                        </div>
+                    </Grid>
+            }
         </Grid>
     )
 }

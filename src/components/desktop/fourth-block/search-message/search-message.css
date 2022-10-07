@@ -1,0 +1,11 @@
+.fourth-block .search-message {
+    max-height: 60px !important;
+    padding: 5px 10px;
+    border-bottom: 1px solid #808080;
+    overflow: hidden;
+  }
+  .fourth-block .search-message p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

@@ -18,7 +18,7 @@ const MobileThirdBlock = () => {
             if (data) setHide('none')
             else setHide('inline')
         }
-    }, [data])
+    }, [window.innerWidth, data])
 
     if (id !== 0) return (
         <Grid 
