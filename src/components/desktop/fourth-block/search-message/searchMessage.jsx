@@ -17,12 +17,16 @@ const SearchMessage = ({ mess }) => {
             :
             setWho('Вы:')
     }, [who, id])
-    
 
     return (
         <Grid item className='search-message'>
             <Typography variant="body2" component="h1">{mess.date}</Typography>
-            <Typography variant="body2" component="p"><Typography fontWeight="bold" component="span">{who}</Typography> {mess.message}</Typography>
+            <Typography variant="body2" component="p">
+                <Typography fontWeight="bold" component="span">
+                    {who}
+                </Typography>
+                {mess.message}
+            </Typography>
         </Grid>
     )
 }
