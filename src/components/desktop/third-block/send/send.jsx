@@ -1,18 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Grid, IconButton, InputBase } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import { useDispatch, useSelector } from "react-redux";
 import { getChat, writeMessage } from "../../../../features/message/messageSlice";
 import s from './send.module.css';
-import copyCat from "../../../../copycat/copycat";
-import { isWriting } from "../../../../features/peoples/peoplesSlice";
 
 const Send = () => {
     const dispatch = useDispatch()
     const id = useSelector(state => state.peoples.id)
     const message = useSelector(state => state.message.message)
-    const chat = useSelector(state => state.message.chat)
 
     const onWriteMessage = (e) => dispatch(writeMessage(e.target.value))
     const sendMessage = () => {
@@ -25,17 +22,6 @@ const Send = () => {
 
         dispatch(getChat(mess))
         dispatch(writeMessage(''))
-
-        if (id === 11) {
-            if (message.trim().length !== 0) dispatch(isWriting(true))
-            copyCat(id, 'text', message.trim())
-                .then((e) => {
-                    setTimeout(() => {
-                        dispatch(getChat(e))
-                        dispatch(isWriting(false))
-                    }, 1500);
-                })
-        }
     }
     const sendEnter = (e) => {
         if (e.key === "Enter") sendMessage();
@@ -58,32 +44,10 @@ const Send = () => {
                     date: `${new Date().getHours()}:${new Date().getMinutes()}`
                 }
                 dispatch(getChat(mess))
-
-                if (id === 11) {
-                    dispatch(isWriting(true))
-                    copyCat(id, '', ev.target.result)
-                        .then((e) => {
-                            setTimeout(() => {
-                                dispatch(getChat(e))
-                                dispatch(isWriting(false))
-                            }, 1500);
-                        })
-                }
             }
             reader.readAsDataURL(file)
         })
     }
-
-    const mess = {
-        id: 11,
-        align: 'left',
-        message: 'Привет, я CopyCat и я буду копировать твои сообщения которые ты мне отправляешь',
-        date: `${new Date().getHours()}:${new Date().getMinutes()}`
-    }
-
-    useEffect(() => {
-        if (chat.length === 0) dispatch(getChat(mess))
-    }, [chat])
 
     return (
         <Grid

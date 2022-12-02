@@ -11,20 +11,17 @@ const ContactInfo = () => {
     const dispatch = useDispatch();
     const id = useSelector(state => state.peoples.id)
     const contacts = useSelector(state => state.peoples.contacts)
-    const writing = useSelector(state => state.peoples.writing)
     const currentContact = contacts.find(user => user.id === id)
 
     const showData = () => dispatch(checkData('user'))
 
     const [width, setWidth] = useState(1)
     const [size, setSize] = useState('medium')
-    const [writingTextHeight, setWritingTextHeight] = useState(27.34)
 
     useEffect(() => {
         if (window.innerWidth <= 1030) {
             setWidth(12)
             setSize('small')
-            setWritingTextHeight(22.38)
         }
     }, [window.innerWidth])
 
@@ -67,24 +64,12 @@ const ContactInfo = () => {
                                 {currentContact.name}
                             </Typography>
                             <span className={s.contactStatus}>
-                                {
-                                    writing && id === 11 ?
-                                        <Typography
-                                            className={s.writingText}
-                                            height={writingTextHeight}
-                                            variant="h6"
-                                            fontSize='small'
-                                        >
-                                            Печатает<span className={s.writing}>...</span>
-                                        </Typography>
-                                        :
-                                        <>
-                                            <CircleIcon fontSize={size} color='success' />
-                                            <Typography fontSize={size} mt={0.1} mb={0} ml={1} variant="caption" display="block" gutterBottom>
-                                                Online
-                                            </Typography>
-                                        </>
-                                }
+                                <>
+                                    <CircleIcon fontSize={size} color={currentContact.status === 'online' ? 'success' : 'error'} />
+                                    <Typography fontSize={size} mt={0.1} mb={0} ml={1} variant="caption" display="block" gutterBottom>
+                                        {currentContact.status}
+                                    </Typography>
+                                </>
                             </span>
                         </Grid>
                     </Grid>

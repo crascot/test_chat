@@ -15,8 +15,7 @@ const SecondBlock = () => {
 
     const contactsBlock = contacts
         .filter(contact => contact.name.toLowerCase().includes(search.toLocaleLowerCase()))
-        .map((props => <Peoples props={props} key={props.id} />))
-
+        .map((props => <Peoples props={props} key={props.id} />));
     const find = (event) => dispatch(findContact(event.target.value))
 
     return (
