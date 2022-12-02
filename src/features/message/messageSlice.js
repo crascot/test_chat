@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   chat: [],
   message: '',
+  unreadMessageCount: 0
 }
 
 export const messageSlice = createSlice({
@@ -10,7 +11,7 @@ export const messageSlice = createSlice({
   initialState,
   reducers: {
     getChat: (state, action) => { state.chat.push(action.payload) },
-    writeMessage: (state, action) => { state.message = action.payload },
+    writeMessage: (state, action) => { state.message = action.payload }
   }
 })
 

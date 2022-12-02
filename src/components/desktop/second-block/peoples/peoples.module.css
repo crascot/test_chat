@@ -40,17 +40,3 @@
     margin-bottom: 7px;
     margin-left: 7px;
 }
-
-.writing {
-    width: max-content;
-    max-height: 19.91px;
-    display: flex;
-    align-items: center !important;
-    animation: typing 1s infinite;
-    overflow: hidden;
-}
-
-@keyframes typing {
-    0% { width: 0; }
-    100% { width: 100%; }
-}
