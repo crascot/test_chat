@@ -13,18 +13,20 @@ const Send = () => {
 
     const onWriteMessage = (e) => dispatch(writeMessage(e.target.value))
     const sendMessage = () => {
-        let mess = {
-            id: id,
-            align: 'right',
-            message: message.trim(),
-            date: `${new Date().getHours()}:${new Date().getMinutes()}`
-        }
+        if (message.length !== 0) {
+            let mess = {
+                id: id,
+                align: 'right',
+                message: message.trim(),
+                date: `${new Date().getHours()}:${new Date().getMinutes()}`
+            }
 
-        dispatch(getChat(mess))
-        dispatch(writeMessage(''))
+            dispatch(getChat(mess))
+            dispatch(writeMessage(''))
+        }
     }
     const sendEnter = (e) => {
-        if (e.key === "Enter") sendMessage();
+        if (e.key === "Enter" && message.length !== 0) sendMessage();
     }
 
     const sendImage = (event) => {
